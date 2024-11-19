@@ -22,7 +22,7 @@ const CategoryMenu = () => {
 
   return (
     <div className="mx-6">
-      <h3 className="text-2xl font-semibold" style={{ fontFamily: "Papyrus" }}>Find the best food</h3>
+      <h3 className="text-2xl font-semibold mt-8" style={{ fontFamily: "Papyrus" }}>Find the best food</h3>
       <div className="my-5 flex gap-3 overflow-x-scroll scroll-smooth lg:overflow-x-hidden">
         {allCategories.map((category, index) => (
           <button
