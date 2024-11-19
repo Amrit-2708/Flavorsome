@@ -1,3 +1,4 @@
+require('./dbConnect')
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -7,16 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-mongoose
-  .connect(
-    process.env.MONGODB_URI
-  )
-  .then(() => {
-    console.log("Connected to MongoDB Atlas");
-  })
-  .catch((err) => {
-    console.error("Error connecting to MongoDB Atlas", err);
-  });
+
 
 const UserSchema = new mongoose.Schema({
   name: {
