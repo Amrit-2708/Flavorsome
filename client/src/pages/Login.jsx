@@ -23,7 +23,7 @@ const Login = () => {
   function handleLogin(e) {
     e.preventDefault();
     axios
-      .post("http://localhost:4001/login", { email, password })
+      .post(`${import.meta.env.VITE_SERVER_URL}/login`, { email, password })
       .then((result) => {
         console.log(result);
         toast.success(`${result.data.message}`, { autoClose: 2000 });

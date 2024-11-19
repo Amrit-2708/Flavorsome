@@ -14,7 +14,7 @@ const Signup = () => {
   function handleSubmit(e) {
     e.preventDefault();
     axios
-      .post("http://localhost:4001/signup", { name, email, password })
+      .post(`${import.meta.env.VITE_SERVER_URL}/signup`, { name, email, password })
       .then((result) => {
         toast.success(`${result.data.message}`, { autoClose: 2000 });
         console.log("signup wale:", result);
