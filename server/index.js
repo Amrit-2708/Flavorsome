@@ -1,5 +1,3 @@
-// mongodb+srv://amrit_27:S5JOAMCjZoAXBKY7@cluster0.wv0w0.mongodb.net/CUSTOMERS?retryWrites=true&w=majority&appName=Cluster0
-
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -37,6 +35,11 @@ const UserSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model("users", UserSchema);
+
+app.get("/", (req, res)=>{
+  res.status(200).send("Server running perfectly");
+})
+
 
 app.post("/signup", async (req, res) => {
   const { name, email, password } = req.body;
